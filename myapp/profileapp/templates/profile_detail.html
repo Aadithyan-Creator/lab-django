@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Details</title>
+</head>
+<body>
+<h2>Profile for {{ user.username }}</h2>
+<p><strong>Bio:</strong> {{ profile.bio }}</p>
+<p><strong>Phone:</strong> {{ profile.phone_number }}</p>
+{% if profile.profile_picture %}
+    <img src="{{ profile.profile_picture.url }}" width="150">
+{% else %}
+    <p>No profile picture</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+</head>
+<body>
+
+    <h2>User Created Successfully</h2>
+    <a href="/user/register/">Create another user</a>
+
+    <h3>All Users:</h3>
+    <ul>
+    {% for user in users %}
+        <li>
+            {{ user.username }} - 
+            <a href="{% url 'profile_create' user.id %}">Create Profile</a> | 
+            <a href="{% url 'profile_detail' user.id %}">View Profile</a>
+        </li>
+    {% empty %}
+        <li>No users found.</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
